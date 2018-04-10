@@ -4,7 +4,9 @@ window.onload = function() {
 
 function headerMenuAsideCallback() {
   let headerMenu = document.getElementById("header-menu");
-  headerMenu.addEventListener("click", e => {
-    console.log("testing");
-  })
+  headerMenu.addEventListener("click", ev => {
+    ["navigation", "content"].forEach(el => {
+      document.getElementById(el).classList.toggle("navigation-show");
+    });
+  });
 }

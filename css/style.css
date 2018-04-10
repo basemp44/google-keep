@@ -6,7 +6,7 @@ html,body {
 body {
     display: grid;
     grid-template-rows: 64px 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: 240px 1fr;
 }
 header {
     grid-column: 1 / -1;
@@ -85,6 +85,15 @@ header a.header-menu:hover {
 }
 .navigation {
     display: none;
+}
+
+nav.navigation-show {
+    display: block;
+    grid-column: 1/2;
+}
+
+section.navigation-show {
+    grid-column: 2/-1;
 }
 
 @media (min-width:768px){
