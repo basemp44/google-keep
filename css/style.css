@@ -17,6 +17,21 @@ header {
     align-items: center;
     padding: 10px;
 }
+
+header a.header-menu {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+header a.header-menu:hover {
+    background-color: #daa104;
+}
+
 .title {
     font-family: 'Product Sans',Arial,sans-serif;
     font-size: 22px;
