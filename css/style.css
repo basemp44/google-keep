@@ -42,6 +42,7 @@ div#aside-content {
 }
 
 /* animated aside */
+
 div#aside-content {
 	margin-left: -256px;
 	transition: margin-left 1s;
@@ -50,7 +51,6 @@ div#aside-content {
 div#aside-content.navigation-show {
 	grid-template-columns: 256px 0px 1fr;
 	margin-left: 0px;
-	transition: margin-left 1s;
 }
 
 @media (min-width:768px) {
@@ -61,10 +61,15 @@ div#aside-content.navigation-show {
 }
 
 /* hide content when menu is presed */
+div#aside-content .content {
+	transition: opacity 1s, filter 1s;
+}
+
 div#aside-content.navigation-show .content {
 	opacity: 0.5;
 	filter: blur(1px);
 }
+
 div#aside-content.navigation-show .content > * {
 	pointer-events: none;
 }
