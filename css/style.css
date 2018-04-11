@@ -105,6 +105,11 @@ div#aside-content {
 	background-color: black;
 }
 
+.content,
+.navigation {
+	overflow-y: auto;
+}
+
 .navigation {
 	flex-direction: column;
 }
@@ -114,10 +119,6 @@ div#aside-content {
 	width: 100%;
 	height: 48px;
 	padding-left: 20px;
-}
-
-.content, .navigation {
-	overflow-y: auto;
 }
 
 .navigation-items + .navigation-items {
