@@ -88,7 +88,7 @@ header a.header-menu:hover {
 }
 
 nav.navigation-show {
-    display: block;
+    display: flex;
     grid-column: 1/2;
 }
 
