@@ -71,7 +71,7 @@ div#aside-content.navigation-show .content > * {
 
 /* common logic styles */
 header,
-header a.header-menu,
+a.icon,
 .navigation,
 .navigation-items {
 	display: flex;
@@ -79,15 +79,17 @@ header a.header-menu,
 }
 
 header {
-	justify-content: space-between;
-	padding: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
-header a.header-menu {
+a.icon {
 	justify-content: center;
 }
 
-.searcher-header {
+input.searcher-header {
+	flex-grow: 1;
+	flex-basis: 100px;
 	height: 100%;
 	width: 35%;
 	padding-left: 35px;
@@ -125,13 +127,24 @@ div#aside-content {
 header {
 	background-color: #ffbb00;
 }
-header a.header-menu {
+
+header > * {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+header .icon-circle {
 	border-radius: 50%;
-	width: 36px;
-	height: 36px;
+}
+
+header .icon {
+	color: black;
+	width: 32px;
+	height: 32px;
 	text-decoration: none;
 }
-header a.header-menu:hover {
+
+header .icon:hover {
 	background-color: #daa104;
 }
 
