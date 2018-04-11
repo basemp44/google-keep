@@ -5,32 +5,52 @@ body {
 	margin: 0;
 }
 
-/* grid layout and nav animation */
-body {
+/* main layout */
+body,
+div#aside-content,
+.content {
 	display: grid;
+}
+
+body {
 	grid-template-rows: 64px 1fr;
 }
 
 div#aside-content {
-	display: grid;
 	grid-template-columns: 256px 256px 1fr;
+}
+
+.navigation {
+	grid-column: 1 / 2;
+}
+
+.content {
+	grid-column: 2 / -1;
+	padding: 25px;
+	grid-template-rows: 46px repeat(auto-fill,minmax(120px,1fr)) ;
+	grid-template-columns: repeat(auto-fill,minmax(240px,1fr)) ;
+}
+
+.searcher-content {
+	grid-row: 1 / 2;
+	grid-column: 1 / -1;
+	padding: 5px;
+}
+
+.content-notes {
+	padding: 10px;
+}
+
+/* animated aside */
+div#aside-content {
 	margin-left: -256px;
 	transition: margin-left 1s;
-	overflow-y: hidden;
-	background-color: black;
 }
 
 div#aside-content.navigation-show {
 	grid-template-columns: 256px 0px 1fr;
 	margin-left: 0px;
 	transition: margin-left 1s;
-}
-
-.navigation {
-	grid-column: 1 / 2;
-}
-.content {
-	grid-column: 2 / -1;
 }
 
 @media (min-width:768px) {
@@ -50,16 +70,20 @@ div#aside-content.navigation-show .content > * {
 }
 
 /* common logic styles */
-header {
+header,
+header a.header-menu,
+.navigation,
+.navigation-items {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+}
+
+header {
+	justify-content: space-between;
 	padding: 10px;
 }
 
 header a.header-menu {
-	display: flex;
-	align-items: center;
 	justify-content: center;
 }
 
@@ -69,31 +93,16 @@ header a.header-menu {
 	padding-left: 35px;
 }
 
-.content {
-	display: grid;
-	padding: 25px;
-	grid-template-rows: 46px repeat(auto-fill,minmax(120px,1fr)) ;
-	grid-template-columns: repeat(auto-fill,minmax(240px,1fr)) ;
-}
-
-.searcher-content {
-	grid-row: 1 / 2;
-	grid-column: 1 / -1;
-	padding: 5px;
-}
-
-.content-notes {
-	padding: 10px;
+div#aside-content {
+	overflow-y: hidden;
+	background-color: black;
 }
 
 .navigation {
-	display: flex;
 	flex-direction: column;
 }
 
 .navigation-items {
-	display: flex;
-	align-items: center;
 	box-sizing: border-box;
 	width: 100%;
 	height: 48px;
