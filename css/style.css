@@ -5,6 +5,7 @@ body {
 	margin: 0;
 }
 
+/* grid layout and nav animation */
 body {
 	display: grid;
 	grid-template-rows: 64px 1fr;
@@ -16,6 +17,7 @@ div#aside-content {
 	margin-left: -256px;
 	transition: margin-left 1s;
 	overflow-y: hidden;
+	background-color: black;
 }
 
 div#aside-content.navigation-show {
@@ -38,6 +40,16 @@ div#aside-content.navigation-show {
 	}
 }
 
+/* hide content when menu is presed */
+div#aside-content.navigation-show .content {
+	opacity: 0.5;
+	filter: blur(1px);
+}
+div#aside-content.navigation-show .content > * {
+	pointer-events: none;
+}
+
+/* common styles */
 header {
 	background-color: #ffbb00;
 	display: flex;
