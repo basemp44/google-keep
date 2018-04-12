@@ -1,17 +1,30 @@
 window.onload = function () {
-  headerMenuAsideCallback();
+  asideBehaviour();
 }
 
-function headerMenuAsideCallback() {
-  let headerMenu = document.getElementById("header-menu");
-  headerMenu.addEventListener("click", ev => {
-    if (window.innerWidth <= 768) {
-      document.getElementById("aside-content-container").classList.toggle("navigation-show");
-    }
-  });
+function asideBehaviour() {
+	let headerMenu = document.getElementById("header-menu");
+	let content = document.getElementById("content");
 
-  let content = document.getElementById("content");
-  content.addEventListener("click", ev => {
-    document.getElementById("aside-content-container").classList.remove("navigation-show");
-  })
+	headerMenu.addEventListener("click", toggleNavigation);
+	content.addEventListener("click", hideNavigation)
+
+	function toggleNavigation(ev) {
+		if (window.innerWidth <= 768) {
+			toggleClass("aside-content-container", "navigation-show");
+		}
+	}
+
+	function hideNavigation(ev) {
+		removeClass("aside-content-container", "navigation-show");
+	}
 }
+
+function toggleClass(id, classs) {
+	document.getElementById(id).classList.toggle(classs);
+}
+
+function removeClass(id, classs) {
+	document.getElementById(id).classList.remove(classs);
+}
+
