@@ -1,5 +1,6 @@
 window.onload = function () {
-  asideBehaviour();
+	asideBehaviour();
+	searchContentBehaviour();
 }
 
 function asideBehaviour() {
@@ -17,6 +18,27 @@ function asideBehaviour() {
 
 	function hideNavigation(ev) {
 		removeClass("aside-content-container", "navigation-show");
+	}
+}
+
+function searchContentBehaviour() {
+	let input  = document.getElementById("searcher-content-input");
+	let btnadd = document.getElementById("searcher-content-btnadd");
+	let grid   = document.getElementById("content");
+
+	btnadd.addEventListener("click", addNote);
+
+	function addNote(ev) {
+		addNoteToGrid();
+		clearInput();
+	}
+
+	function addNoteToGrid() {
+		console.log("note added!");
+	}
+
+	function clearInput() {
+		console.log("input cleaned!");
 	}
 }
 
