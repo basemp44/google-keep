@@ -27,10 +27,27 @@ function searchContentBehaviour() {
 	let grid   = document.getElementById("content");
 	
 	btnadd.addEventListener("click", addNote);
+	input.addEventListener("input", enableOrDisableBtnAdd);
+
+	function enableOrDisableBtnAdd() {
+		if (input.value == "")
+			disableBtnAdd();
+		else
+			enableBtnAdd();
+	}
 
 	function addNote(ev) {
 		addNoteToGrid();
 		clearInput();
+		disableBtnAdd();
+	}
+
+	function enableBtnAdd() {
+		btnadd.disabled = false;
+	}
+	
+	function disableBtnAdd() {
+		btnadd.disabled = true;
 	}
 
 	function addNoteToGrid() {
