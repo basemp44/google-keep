@@ -25,7 +25,7 @@ function searchContentBehaviour() {
 	let input  = document.getElementById("searcher-content-input");
 	let btnadd = document.getElementById("searcher-content-btnadd");
 	let grid   = document.getElementById("content");
-
+	
 	btnadd.addEventListener("click", addNote);
 
 	function addNote(ev) {
@@ -34,11 +34,23 @@ function searchContentBehaviour() {
 	}
 
 	function addNoteToGrid() {
-		console.log("note added!");
+		let note = createNote(input.value);
+		grid.appendChild(note);
 	}
 
 	function clearInput() {
-		console.log("input cleaned!");
+		input.value = "";
+	}
+
+	function createNote(text) {
+		let note = document.createElement("div");
+		let p = document.createElement("p");
+
+		note.setAttribute("class", "content-notes");
+		p.textContent = text;
+
+		note.appendChild(p);
+		return note;
 	}
 }
 
