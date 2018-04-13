@@ -96,13 +96,37 @@ a.icon,
 	align-items: center;
 }
 
+a.icon {
+	justify-content: center;
+}
+
 header {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
-a.icon {
-	justify-content: center;
+header .title {
+	display: none;
+}
+
+@media (min-width: 545px) {
+	header .title {
+		display: block;
+	}
+}
+
+.header-optgroup-1 {
+	display: none;
+}
+
+.header-optgroup-2 {
+	display: flex;
+}
+
+@media (min-width: 400px) {
+	.header-optgroup-1 {
+		display: flex;
+	}
 }
 
 input.searcher-header {
@@ -174,12 +198,12 @@ header a.icon:hover {
 	background-color: #daa104;
 }
 
-.title {
+header .title {
 	font-family: 'Product Sans',Arial,sans-serif;
 	font-size: 22px;
 	font-weight: 500;
 }
-.title span {
+header .title span {
 	font-weight: bolder;
 }
 
