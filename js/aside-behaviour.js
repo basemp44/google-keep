@@ -1,6 +1,4 @@
-import {toggleClass, removeClass} from "utils";
-
-export default function asideBehaviour() {
+function asideBehaviour() {
 	let headerMenu = document.getElementById("header-menu");
 	let content = document.getElementById("content");
 

@@ -1,4 +1,4 @@
-export default function searchContentBehaviour() {
+function searchContentBehaviour() {
 	let input  = document.getElementById("searcher-content-input");
 	let btnadd = document.getElementById("searcher-content-btnadd");
 	let grid   = document.getElementById("content");
