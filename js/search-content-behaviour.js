@@ -41,7 +41,7 @@ function searchContentBehaviour() {
 	}
 
 	function createNote(text) {
-		let note = document.createElement("div");
+		let note = document.createElement("article");
 		let p = document.createElement("p");
 
 		note.setAttribute("class", "content-notes");

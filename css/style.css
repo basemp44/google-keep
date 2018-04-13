@@ -8,7 +8,8 @@ body {
 /* main layout */
 body,
 main,
-.content {
+.content,
+.grid-notes {
 	display: grid;
 }
 
@@ -26,17 +27,24 @@ main {
 
 .content {
 	grid-column: 2 / -1;
+	grid-template-rows: 50px 1fr;
+	grid-gap: 16px;
 	padding: 25px;
+}
+
+.grid-notes {
 	grid-auto-rows: min-content;
 	grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
 	grid-gap: 20px;
-	align-items: flex-start;
 }
 
 .searcher-content {
 	grid-column: 1 / -1;
 	padding: 5px;
-	height: 46px;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	box-sizing: border-box;
 }
 
 .content-notes {
@@ -209,7 +217,9 @@ header a.icon:hover {
 	font-weight: 500px;
 }
 
-.content, .navigation {
+.content,
+.grid-notes,
+.navigation {
 	background-color: #e8e8e8;
 }
 
