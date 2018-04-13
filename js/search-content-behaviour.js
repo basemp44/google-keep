@@ -1,7 +1,7 @@
 function searchContentBehaviour() {
-	let input  = document.getElementById("searcher-content-input");
-	let btnadd = document.getElementById("searcher-content-btnadd");
-	let grid   = document.getElementById("content");
+	let input     = document.getElementById("searcher-content-input");
+	let btnadd    = document.getElementById("searcher-content-btnadd");
+	let gridnotes = document.getElementById("grid-notes");
 	
 	btnadd.addEventListener("click", addNote);
 	input.addEventListener("input", enableOrDisableBtnAdd);
@@ -29,7 +29,7 @@ function searchContentBehaviour() {
 
 	function addNoteToGrid() {
 		let note = createNote(input.value);
-		grid.appendChild(note);
+		gridnotes.appendChild(note);
 	}
 
 	function clearInput() {
