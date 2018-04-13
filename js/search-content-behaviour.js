@@ -7,7 +7,7 @@ function searchContentBehaviour() {
 	input.addEventListener("input", enableOrDisableBtnAdd);
 
 	function enableOrDisableBtnAdd() {
-		if (input.value == "")
+		if (isInputClear())
 			disableBtnAdd();
 		else
 			enableBtnAdd();
@@ -34,6 +34,10 @@ function searchContentBehaviour() {
 
 	function clearInput() {
 		input.value = "";
+	}
+
+	function isInputClear() {
+		return !input.value.trim();
 	}
 
 	function createNote(text) {
