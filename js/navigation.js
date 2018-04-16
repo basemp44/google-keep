@@ -1,15 +1,15 @@
 function populateNavigation() {
 	let items = [
-		["note",          "Notas",                    "#"],
+		["note",          "Notas",             "",    "#"],
 		["touch_app",     "Recordatorios",     "sep", "#"],
 		["add",           "Añadir etiqueta",   "sep", "#"],
-		["archive",       "Archivo",                  "#"],
+		["archive",       "Archivo",           "",    "#"],
 		["delete",        "Papelera",          "sep", "#"],
-		["settings",      "Configuracion",            "#"],
-		["feedback",      "Feedback",                 "#"],
-		["help",          "Ayuda",                    "#"],
-		["devices_other", "Descargar App",            "#"],
-		["keyboard",      "Atajos de teclado",        "#"]
+		["settings",      "Configuracion",     "",    "#"],
+		["feedback",      "Feedback",          "",    "#"],
+		["help",          "Ayuda",             "",    "#"],
+		["devices_other", "Descargar App",     "",    "#"],
+		["keyboard",      "Atajos de teclado", "",    "#"]
 	];
 	let nav = document.getElementById("navigation");
 
