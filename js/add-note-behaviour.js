@@ -21,10 +21,12 @@ function addNoteBehaviour() {
 	}
 
 	function addNote(grid, input, btn) {
-		addNoteToGrid(grid, input);
-		addNoteToLogic(input)
-		clearInput(input);
-		disableBtnAdd(btn);
+		if (!isInputClear(input)) {
+			addNoteToGrid(grid, input);
+			addNoteToLogic(input)
+			clearInput(input);
+			disableBtnAdd(btn);
+		}
 	}
 
 	function enableBtnAdd(btn) {
