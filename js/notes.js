@@ -1,5 +1,7 @@
 class NotesImpl {
-	constructor() {}
+	constructor() {
+		this.notes = [];
+	}
 
 	add(txt) {
 		this.notes.push(txt.trim().toLowerCase());
