@@ -188,10 +188,13 @@ a.icon-circle {
 }
 
 a.icon {
-	color: black;
 	width: 32px;
 	height: 32px;
 	text-decoration: none;
+}
+
+.material-icons {
+	color: rgb(70, 70, 70);
 }
 
 header a.icon:hover {
