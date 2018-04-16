@@ -38,7 +38,7 @@ main {
 	grid-gap: 20px;
 }
 
-.searcher-content {
+.add-note {
 	grid-column: 1 / -1;
 	padding: 5px;
 	width: 100%;
@@ -90,7 +90,7 @@ header,
 a.icon,
 .navigation,
 .navigation-items,
-.searcher-content,
+.add-note,
 .content-notes {
 	display: flex;
 	align-items: center;
@@ -166,10 +166,10 @@ main {
 	padding: 15px 0 15px 20px;
 }
 
-.searcher-content {
+.add-note {
 	align-items: stretch;
 }
-.searcher-content > input {
+.add-note > input {
 	flex-grow: 1;
 }
 
@@ -221,12 +221,12 @@ header .title span {
 	outline: none;
 }
 
-.searcher-content {
+.add-note {
 	box-shadow: 0.2px 1px 5px gray;
 	background-color: white;
 }
 
-.searcher-content > input {
+.add-note > input {
 	border: none;
 	outline: none;
 	padding-left: 25px;

@@ -1,6 +1,6 @@
 function addNoteBehaviour() {
-	let input     = document.getElementById("searcher-content-input");
-	let btnAdd    = document.getElementById("searcher-content-btnadd");
+	let input     = document.getElementById("add-note-input");
+	let btnAdd    = document.getElementById("add-note-btnadd");
 	let gridNotes = document.getElementById("grid-notes");
 	
 	btnAdd.addEventListener("click", ev => addNote(gridNotes, input, btnAdd));
