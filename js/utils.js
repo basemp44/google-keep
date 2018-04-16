@@ -17,3 +17,7 @@ function isInputClear(input) {
 function clearInput(input) {
 	input.value = "";
 }
+
+function htmlCollectionToArray(htmlParent) {
+	return Array.from(htmlParent.children);
+}

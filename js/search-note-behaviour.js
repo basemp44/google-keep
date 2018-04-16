@@ -50,8 +50,4 @@ function searchNoteBehaviour() {
 		let expr = `(<span class="highlight">)|(</span>)`;
 		return innerHTML.replace(new RegExp(expr, "g"), "");
 	}
-
-	function htmlCollectionToArray(htmlParent) {
-		return Array.from(htmlParent.children);
-	}
 }
