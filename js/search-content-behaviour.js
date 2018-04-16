@@ -1,42 +1,42 @@
 function searchContentBehaviour() {
 	let input     = document.getElementById("searcher-content-input");
-	let btnadd    = document.getElementById("searcher-content-btnadd");
-	let gridnotes = document.getElementById("grid-notes");
+	let btnAdd    = document.getElementById("searcher-content-btnadd");
+	let gridNotes = document.getElementById("grid-notes");
 	
-	btnadd.addEventListener("click", addNote);
-	input.addEventListener("input", enableOrDisableBtnAdd);
+	btnAdd.addEventListener("click", ev => addNote(gridNotes, input, btnAdd));
+	input.addEventListener("input", ev => enableOrDisableBtnAdd(input, btnAdd));
 
-	function enableOrDisableBtnAdd() {
-		if (isInputClear())
-			disableBtnAdd();
+	function enableOrDisableBtnAdd(input, btn) {
+		if (isInputClear(input))
+			disableBtnAdd(btn);
 		else
-			enableBtnAdd();
+			enableBtnAdd(btn);
 	}
 
-	function addNote(ev) {
-		addNoteToGrid();
-		clearInput();
-		disableBtnAdd();
+	function addNote(grid, input, btn) {
+		addNoteToGrid(grid, input);
+		clearInput(input);
+		disableBtnAdd(btn);
 	}
 
-	function enableBtnAdd() {
-		btnadd.disabled = false;
+	function enableBtnAdd(btn) {
+		btn.disabled = false;
 	}
 	
-	function disableBtnAdd() {
-		btnadd.disabled = true;
+	function disableBtnAdd(btn) {
+		btn.disabled = true;
 	}
 
-	function addNoteToGrid() {
+	function addNoteToGrid(grid, input) { // !!!
 		let note = createNote(input.value);
-		gridnotes.appendChild(note);
+		grid.appendChild(note);
 	}
 
-	function clearInput() {
+	function clearInput(input) {
 		input.value = "";
 	}
 
-	function isInputClear() {
+	function isInputClear(input) {
 		return !input.value.trim();
 	}
 
