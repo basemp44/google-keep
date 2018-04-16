@@ -193,7 +193,8 @@ a.icon {
 	text-decoration: none;
 }
 
-.material-icons {
+.navigation-items,
+.header-items {
 	color: rgb(70, 70, 70);
 }
 

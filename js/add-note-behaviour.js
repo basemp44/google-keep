@@ -1,9 +1,14 @@
-function searchContentBehaviour() {
+function addNoteBehaviour() {
 	let input     = document.getElementById("searcher-content-input");
 	let btnAdd    = document.getElementById("searcher-content-btnadd");
 	let gridNotes = document.getElementById("grid-notes");
 	
 	btnAdd.addEventListener("click", ev => addNote(gridNotes, input, btnAdd));
+	input.addEventListener("keyup", ev => {
+		if (ev.key === "Enter") {
+			addNote(gridNotes, input, btnAdd);
+		}
+	});
 	input.addEventListener("input", ev => enableOrDisableBtnAdd(input, btnAdd));
 
 	function enableOrDisableBtnAdd(input, btn) {
