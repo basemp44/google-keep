@@ -129,7 +129,7 @@ header .title {
 	}
 }
 
-input.searcher-header {
+input.search-note {
 	flex-grow: 1;
 	flex-basis: 100px;
 	height: 100%;
@@ -211,16 +211,16 @@ header .title span {
 	font-weight: bolder;
 }
 
-.searcher-header {
+.search-note {
 	border: none;
 	background-color: rgba(136, 132, 132, 0.178);
 	border-radius: 3px;
 }
-.searcher-header:focus {
+.search-note:focus {
 	background-color: white;
 	outline: none;
 }
-
+search-note
 .add-note {
 	box-shadow: 0.2px 1px 5px gray;
 	background-color: white;
