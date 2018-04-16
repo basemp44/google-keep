@@ -1,7 +1,7 @@
 class NotesImpl {
 	constructor() {}
 
-	static add(txt) {
+	add(txt) {
 		this.notes.push(txt.trim().toLowerCase());
 	}
 
