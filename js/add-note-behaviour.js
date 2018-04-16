@@ -41,7 +41,7 @@ function addNoteBehaviour() {
 		Notes.add(input.value);
 	}
 
-	function addNoteToGrid(grid, input) { // !!!
+	function addNoteToGrid(grid, input) {
 		let note = createNote(input.value);
 		grid.appendChild(note);
 	}
