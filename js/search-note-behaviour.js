@@ -12,7 +12,7 @@ function searchNoteBehaviour() {
 		htmlCollectionToArray(gridNotes).forEach((note, id) => {
 			if (showNoteIndexes.includes(id)) {
 				showNote(note);
-				unHighLight(note, input.value);
+				unHighLight(note);
 				highLight(note, input.value);
 			} else {
 				hideNote(note);
