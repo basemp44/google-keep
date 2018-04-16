@@ -3,14 +3,18 @@ class NotesImpl {
 		this.notes = [];
 	}
 
+	get length() {
+		return this.notes.length;
+	}
+
 	add(txt) {
 		this.notes.push(txt.trim().toLowerCase());
 	}
 
-	filter(innerText) {
-		this.notes.filter(e =>
-			new RegExp(innerText).test(e)
-		);
+	getIndexesFilter(innerText) {
+		return this.notes
+			.map((e,i) => new RegExp(innerText).test(e) ? i : null)
+			.filter(e => e != null);
 	}
 }
 

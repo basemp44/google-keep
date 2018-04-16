@@ -22,6 +22,7 @@ function addNoteBehaviour() {
 
 	function addNote(grid, input, btn) {
 		addNoteToGrid(grid, input);
+		addNoteToLogic(input)
 		clearInput(input);
 		disableBtnAdd(btn);
 	}
@@ -32,6 +33,10 @@ function addNoteBehaviour() {
 	
 	function disableBtnAdd(btn) {
 		btn.disabled = true;
+	}
+
+	function addNoteToLogic(input) {
+		Notes.add(input.value);
 	}
 
 	function addNoteToGrid(grid, input) { // !!!
@@ -51,7 +56,8 @@ function addNoteBehaviour() {
 		let note = document.createElement("article");
 		let p = document.createElement("p");
 
-		note.setAttribute("class", "content-notes");
+		note.classList = "content-notes";
+		note.id = `note-${Notes.length}`;
 		p.textContent = text;
 
 		note.appendChild(p);

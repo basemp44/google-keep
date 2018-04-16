@@ -47,7 +47,11 @@ main {
 	box-sizing: border-box;
 }
 
-.content-notes {
+article.content-notes.hidden {
+	display: none;
+}
+
+article.content-notes {
 	padding: 10px;
 }
 
@@ -91,7 +95,7 @@ a.icon,
 .navigation,
 .navigation-items,
 .add-note,
-.content-notes {
+article.content-notes {
 	display: flex;
 	align-items: center;
 }
@@ -232,12 +236,12 @@ header .title span {
 	padding-left: 25px;
 	padding-right: 25px;
 }
-.content-notes {
+article.content-notes {
 	background-color: white;
 	box-shadow: 2px 2px 5px gray;
 }
 
-.content-notes > p {
+article.content-notes > p {
 	max-width: 100%;
 	word-wrap: break-word;
 	font-family: 'Patrick Hand', cursive;
