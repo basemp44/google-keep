@@ -57,7 +57,6 @@ function addNoteBehaviour() {
 		let p = document.createElement("p");
 
 		note.classList = "content-notes";
-		note.id = `note-${Notes.length}`;
 		p.textContent = text;
 
 		note.appendChild(p);

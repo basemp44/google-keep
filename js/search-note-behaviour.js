@@ -11,8 +11,8 @@ function searchNoteBehaviour() {
 	function filterNotes(gridNotes, input) {
 		let showNoteIndexes = Notes.getIndexesFilter(input.value);
 
-		htmlNotesAsArray(gridNotes).forEach(note => {
-			if (showNoteIndexes.includes(getIdNote(note))) {
+		htmlNotesAsArray(gridNotes).forEach((note,id) => {
+			if (showNoteIndexes.includes(id)) {
 				showNote(note);
 			} else {
 				hideNote(note);
@@ -30,9 +30,5 @@ function searchNoteBehaviour() {
 
 	function htmlNotesAsArray(gridNotes) {
 		return Array.from(gridNotes.children);
-	}
-
-	function getIdNote(htmlNote) {
-		return parseInt(htmlNote.id.split('-')[1]);
 	}
 }
