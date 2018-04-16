@@ -44,14 +44,6 @@ function addNoteBehaviour() {
 		grid.appendChild(note);
 	}
 
-	function clearInput(input) {
-		input.value = "";
-	}
-
-	function isInputClear(input) {
-		return !input.value.trim();
-	}
-
 	function createNote(text) {
 		let note = document.createElement("article");
 		let p = document.createElement("p");

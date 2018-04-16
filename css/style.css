@@ -269,3 +269,7 @@ article.content-notes > p {
 	font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
 	font-size: 15px;
 }
+
+.highlight {
+	text-decoration: underline;
+}

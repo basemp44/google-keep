@@ -1,5 +1,5 @@
 function searchNoteBehaviour() {
-	let input     = document.getElementById("search-notes");
+	let input = document.getElementById("search-notes");
 	let gridNotes = document.getElementById("grid-notes");
 
 	input.addEventListener("keyup", ev => {
@@ -9,9 +9,11 @@ function searchNoteBehaviour() {
 	function filterNotes(gridNotes, input) {
 		let showNoteIndexes = Notes.getIndexesFilter(input.value);
 
-		htmlNotesAsArray(gridNotes).forEach((note,id) => {
+		htmlCollectionToArray(gridNotes).forEach((note, id) => {
 			if (showNoteIndexes.includes(id)) {
 				showNote(note);
+				unHighLight(note, input.value);
+				highLight(note, input.value);
 			} else {
 				hideNote(note);
 			}
@@ -26,7 +28,30 @@ function searchNoteBehaviour() {
 		htmlNote.classList.add("hidden");
 	}
 
-	function htmlNotesAsArray(gridNotes) {
-		return Array.from(gridNotes.children);
+	function highLight(htmlNote, text) {
+		if (text) {
+			let p = htmlNote.firstChild;
+			p.innerHTML = highLightStr(p.innerHTML, text);
+		}
+	}
+
+	function unHighLight(htmlNote) {
+			let p = htmlNote.firstChild;
+			p.innerHTML = unHighLightStr(p.innerHTML);
+	}
+
+	function highLightStr(innerHTML, oldStr) {
+		let newStr = `<span class="highlight">${oldStr}</span>`;
+		return innerHTML.replace(new RegExp(oldStr, "g"), newStr);
+	}
+	
+	function unHighLightStr(innerHTML) {
+		console.log(innerHTML)
+		let expr = `(<span class="highlight">)|(</span>)`;
+		return innerHTML.replace(new RegExp(expr, "g"), "");
+	}
+
+	function htmlCollectionToArray(htmlParent) {
+		return Array.from(htmlParent.children);
 	}
 }
