@@ -94,8 +94,7 @@ header,
 a.icon,
 .navigation,
 .navigation-items,
-.add-note,
-article.note {
+.add-note {
 	display: flex;
 	align-items: center;
 }
@@ -177,6 +176,24 @@ main {
 	flex-grow: 1;
 }
 
+article.note {
+	position: relative;
+}
+
+article.note > .note-remove-container {
+	position: absolute;
+	margin: 2px;
+	top: 0;
+	right: 0;
+	transition: transform 1s;
+	transform: rotateX(-90deg);
+	transform-origin: 0% 0%;
+}
+
+article.note:hover > .note-remove-container {
+	transform: rotateX(0);
+}
+
 /* common beauty styles */
 header {
 	background-color: #ffbb00;
@@ -247,6 +264,12 @@ article.note > p {
 	font-family: 'Patrick Hand', cursive;
 	font-size: 21px;
 	font-weight: 500px;
+}
+
+article.note button {
+	border: none;
+	cursor:pointer;
+	background-color: white;
 }
 
 .content,
