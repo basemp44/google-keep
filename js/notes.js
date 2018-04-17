@@ -3,12 +3,16 @@ class NotesImpl {
 		this.notes = [];
 	}
 
+	get length() {
+		return this.notes.length;
+	}
+
 	add(txt) {
 		this.notes.push(txt.trim().toLowerCase());
 	}
 
 	remove(index) {
-		this.notes.slice(0,index).concat(a.slice(index+1));
+		this.notes.splice(index, 1);
 	}
 
 	getIndexesFilter(innerText) {
@@ -19,4 +23,3 @@ class NotesImpl {
 }
 
 const Notes = new NotesImpl();
-Object.freeze(Notes);
