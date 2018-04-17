@@ -178,20 +178,18 @@ main {
 
 article.note {
 	position: relative;
+	overflow: hidden;
 }
 
 article.note > .note-remove-container {
 	position: absolute;
-	margin: 2px;
-	top: 0;
+	top: -40px;
 	right: 0;
-	transition: transform 1s;
-	transform: rotateX(-90deg);
-	transform-origin: 0% 0%;
+	transition: all .5s ease-in-out;
 }
 
 article.note:hover > .note-remove-container {
-	transform: rotateX(0);
+	top: 0;
 }
 
 /* common beauty styles */
