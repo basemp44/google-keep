@@ -13,7 +13,7 @@ class NotesImpl {
 
 	getIndexesFilter(innerText) {
 		return this.notes
-			.map((e,i) => new RegExp(innerText).test(e) ? i : null)
+			.map((e, i) => new RegExp(innerText).test(e) ? i : null)
 			.filter(e => e != null);
 	}
 }

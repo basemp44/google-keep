@@ -36,15 +36,15 @@ function searchNoteBehaviour() {
 	}
 
 	function unHighLight(htmlNote) {
-			let p = htmlNote.firstChild;
-			p.innerHTML = unHighLightStr(p.innerHTML);
+		let p = htmlNote.firstChild;
+		p.innerHTML = unHighLightStr(p.innerHTML);
 	}
 
 	function highLightStr(innerHTML, oldStr) {
 		let newStr = `<span class="highlight">${oldStr}</span>`;
 		return innerHTML.replace(new RegExp(oldStr, "g"), newStr);
 	}
-	
+
 	function unHighLightStr(innerHTML) {
 		console.log(innerHTML)
 		let expr = `(<span class="highlight">)|(</span>)`;
