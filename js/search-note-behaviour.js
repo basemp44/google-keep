@@ -46,7 +46,6 @@ function searchNoteBehaviour() {
 	}
 
 	function unHighLightStr(innerHTML) {
-		console.log(innerHTML)
 		let expr = `(<span class="highlight">)|(</span>)`;
 		return innerHTML.replace(new RegExp(expr, "g"), "");
 	}
