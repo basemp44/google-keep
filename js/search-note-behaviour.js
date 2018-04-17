@@ -30,13 +30,13 @@ function searchNoteBehaviour() {
 
 	function highLight(htmlNote, text) {
 		if (text) {
-			let p = htmlNote.firstChild;
+			let p = htmlNote.firstElementChild;
 			p.innerHTML = highLightStr(p.innerHTML, text);
 		}
 	}
 
 	function unHighLight(htmlNote) {
-		let p = htmlNote.firstChild;
+		let p = htmlNote.firstElementChild;
 		p.innerHTML = unHighLightStr(p.innerHTML);
 	}
 
