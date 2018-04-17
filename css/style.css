@@ -47,11 +47,11 @@ main {
 	box-sizing: border-box;
 }
 
-article.content-notes.hidden {
+article.note.hidden {
 	display: none;
 }
 
-article.content-notes {
+article.note {
 	padding: 10px;
 }
 
@@ -95,7 +95,7 @@ a.icon,
 .navigation,
 .navigation-items,
 .add-note,
-article.content-notes {
+article.note {
 	display: flex;
 	align-items: center;
 }
@@ -236,12 +236,12 @@ header .title span {
 	padding-left: 25px;
 	padding-right: 25px;
 }
-article.content-notes {
+article.note {
 	background-color: white;
 	box-shadow: 2px 2px 5px gray;
 }
 
-article.content-notes > p {
+article.note > p {
 	max-width: 100%;
 	word-wrap: break-word;
 	font-family: 'Patrick Hand', cursive;

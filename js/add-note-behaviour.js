@@ -48,12 +48,28 @@ function addNoteBehaviour() {
 
 	function createNote(text) {
 		let note = document.createElement("article");
-		let p = document.createElement("p");
-
-		note.classList = "content-notes";
-		p.textContent = text;
-
-		note.appendChild(p);
+		note.classList = "note";
+		note.innerHTML = innerHTMLNote(text);
+		setEventListeners(note);
 		return note;
+	}
+
+	function innerHTMLNote(text) {
+		return `
+		<p>${text}</p>
+		<div class="note-remove-container">
+			<button class="note-remove-btn">
+				<i class="material-icons">delete</i>
+			</button>
+		</div>`;
+	}
+
+	function setEventListeners(note) {
+		let btn = getDeleteBtnNote(note);
+		btn.addEventListener("click", e => console.log("hola"))
+	}
+
+	function getDeleteBtnNote(note) {
+		return note.getElementsByClassName("note-remove-btn")[0];
 	}
 }

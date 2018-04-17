@@ -7,6 +7,10 @@ class NotesImpl {
 		this.notes.push(txt.trim().toLowerCase());
 	}
 
+	remove(index) {
+		this.notes.slice(0,index).concat(a.slice(index+1));
+	}
+
 	getIndexesFilter(innerText) {
 		return this.notes
 			.map((e, i) => new RegExp(innerText).test(e) ? i : null)
