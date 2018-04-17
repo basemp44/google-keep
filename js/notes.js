@@ -3,10 +3,6 @@ class NotesImpl {
 		this.notes = [];
 	}
 
-	get length() {
-		return this.notes.length;
-	}
-
 	add(txt) {
 		this.notes.push(txt.trim().toLowerCase());
 	}
