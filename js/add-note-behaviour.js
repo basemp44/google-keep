@@ -3,9 +3,11 @@ function addNoteBehaviour() {
 
 	let input     = document.getElementById("add-note-input");
 	let btnAdd    = document.getElementById("add-note-btnadd");
+	let btnRemove = document.getElementById("add-note-btnremove");
 	let gridNotes = document.getElementById("grid-notes");
 	
 	btnAdd.addEventListener("click", ev => addNote(gridNotes, input, btnAdd));
+	btnRemove.addEventListener("click", ev => removeSelectedNotes(gridNotes));
 	
 	input.addEventListener("keyup", ev => {
 		if (ev.key === "Enter") {
@@ -64,6 +66,7 @@ function addNoteBehaviour() {
 	function innerHTMLNote(text) {
 		return `
 		<p>${text}</p>
+		<input type="checkbox" name="check-note">
 		<div class="note-remove-container">
 			<button class="note-remove-btn">
 				<i class="material-icons">delete</i>
