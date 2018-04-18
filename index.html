@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/icon.css">
 	<link rel="stylesheet" href="css/main-structure.css">
+	<link rel="stylesheet" href="css/modal.css">
 	<link rel="stylesheet" href="css/note-input-add-remove.css">
 	<link rel="stylesheet" href="css/note.css">
 
@@ -54,6 +55,20 @@
 			</a>
 		</div>
 	</header>
+	<div id="update-note-modal" class="modal hidden">
+		<div class="modal-content">
+			<header>
+				<h3>Modifica la nota</h3>
+			</header>
+			<div class="text-container">
+				<input id="update-node-text" type="text">
+			</div>
+			<footer>
+				<button id="update-note-ok" class="btn-submit">Ok</button>
+				<button id="update-note-cancel" class="btn-cancel">Cancel</button>
+			</footer>
+		</div>
+	</div>
 	<main id="aside-content-container">
 		<nav id="navigation" class="navigation">
 			

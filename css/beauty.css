@@ -90,3 +90,11 @@ article.note button {
 .highlight {
 	text-decoration: underline;
 }
+
+button {
+	cursor: pointer;
+}
+
+button:disabled {
+	cursor: auto;
+}
