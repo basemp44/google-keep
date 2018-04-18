@@ -1,0 +1,92 @@
+header {
+	background-color: #ffbb00;
+}
+
+header > * {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.navigation-items,
+.header-items {
+	color: rgb(70, 70, 70);
+}
+
+header a.icon:hover {
+	background-color: #daa104;
+}
+
+header .title {
+	font-family: 'Product Sans',Arial,sans-serif;
+	font-size: 22px;
+	font-weight: 500;
+}
+
+header .title span {
+	font-weight: bolder;
+}
+
+.search-notes {
+	border: none;
+	background-color: rgba(136, 132, 132, 0.178);
+	border-radius: 3px;
+}
+.search-notes:focus {
+	background-color: white;
+	outline: none;
+}
+
+.add-note {
+	box-shadow: 0.2px 1px 5px gray;
+	background-color: white;
+}
+
+.add-note > input {
+	border: none;
+	outline: none;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+article.note {
+	background-color: white;
+	box-shadow: 2px 2px 5px gray;
+}
+
+article.note > p {
+	max-width: 100%;
+	word-wrap: break-word;
+	font-family: 'Patrick Hand', cursive;
+	font-size: 21px;
+	font-weight: 500px;
+}
+
+article.note button {
+	border: none;
+	cursor:pointer;
+	background-color: white;
+}
+
+.content,
+.grid-notes,
+.navigation {
+	background-color: #e8e8e8;
+}
+
+.navigation-items {
+	text-decoration: none;
+}
+.navigation-items:hover {
+	background-color: rgba(177, 174, 174, 0.596);
+}
+.navigation-items-separator {
+	border-bottom: 0.5px solid #cec9c9;
+}
+.navigation-items > p {
+	color: black;
+	font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+	font-size: 15px;
+}
+
+.highlight {
+	text-decoration: underline;
+}

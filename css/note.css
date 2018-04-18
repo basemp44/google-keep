@@ -1,0 +1,29 @@
+article.note.hidden {
+	display: none;
+}
+
+article.note {
+	padding: 10px;
+	position: relative;
+	overflow: hidden;
+}
+
+article.note > input,
+article.note > .note-remove-container {
+	position: absolute;
+}
+
+article.note > input {
+	top: 0;
+	left: 0;
+}
+
+article.note > .note-remove-container {
+	top: -40px;
+	right: 0;
+	transition: all .5s ease-in-out;
+}
+
+article.note:hover > .note-remove-container {
+	top: 0;
+}

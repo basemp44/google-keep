@@ -1,0 +1,38 @@
+header {
+	display: flex;
+	align-items: center;
+}
+
+header {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+header .title {
+	display: none;
+}
+@media (min-width: 545px) {
+	header .title {
+		display: block;
+	}
+}
+
+.header-optgroup-1 {
+	display: none;
+}
+.header-optgroup-2 {
+	display: flex;
+}
+@media (min-width: 400px) {
+	.header-optgroup-1 {
+		display: flex;
+	}
+}
+
+input.search-notes {
+	flex-grow: 1;
+	flex-basis: 100px;
+	height: 100%;
+	width: 35%;
+	padding-left: 35px;
+}

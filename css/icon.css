@@ -1,0 +1,15 @@
+a.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+a.icon-circle {
+	border-radius: 50%;
+}
+
+a.icon {
+	width: 32px;
+	height: 32px;
+	text-decoration: none;
+}
