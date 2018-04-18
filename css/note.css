@@ -9,7 +9,7 @@ article.note {
 }
 
 article.note > input,
-article.note > .note-remove-container {
+article.note > .note-crud-container {
 	position: absolute;
 }
 
@@ -18,12 +18,13 @@ article.note > input {
 	left: 0;
 }
 
-article.note > .note-remove-container {
+article.note > .note-crud-container {
 	top: -40px;
 	right: 0;
+	margin: 3px;
 	transition: all .5s ease-in-out;
 }
 
-article.note:hover > .note-remove-container {
+article.note:hover > .note-crud-container {
 	top: 0;
 }

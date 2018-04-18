@@ -67,7 +67,10 @@ function addNoteBehaviour() {
 		return `
 		<p>${text}</p>
 		<input type="checkbox" name="check-note">
-		<div class="note-remove-container">
+		<div class="note-crud-container">
+			<button class="note-update-btn">
+				<i class="material-icons">border_color</i>
+			</button>
 			<button class="note-remove-btn">
 				<i class="material-icons">delete</i>
 			</button>
@@ -75,14 +78,19 @@ function addNoteBehaviour() {
 	}
 
 	function setNoteListeners(grid, note) {
-		let btn = getDeleteBtnNote(note);
-		btn.addEventListener("click", e => {
-			removeNote(grid, note);
-		});
-	}
+		let btnRemove = getBtnRemoveNote(note);
+		let btnUpdate = getBtnUpdateNote(note);
 
-	function getDeleteBtnNote(note) {
-		return note.getElementsByClassName("note-remove-btn")[0];
+		btnRemove.addEventListener("click", e => removeNote(grid, note));
+		btnUpdate.addEventListener("click", e => updateNote(grid, note));
+
+		function getBtnRemoveNote(note) {
+			return note.getElementsByClassName("note-remove-btn")[0];
+		}
+
+		function getBtnUpdateNote(note) {
+			return note.getElementsByClassName("note-update-btn")[0];
+		}
 	}
 
 	function* idNoteCreateGenerator() {
