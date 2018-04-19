@@ -1,50 +1,46 @@
-let noteEdited;
-
-function updateNoteBehaviour() {
-	divModal         = document.getElementById("update-note-modal");
-	inputUpdate      = document.getElementById("update-note-text");
-	updateNoteOk     = document.getElementById("update-note-ok");
-	updateNoteCancel = document.getElementById("update-note-cancel");
-
-	updateNoteOk.addEventListener("click", ev => updateNoteSuccess(inputUpdate.value));
-	updateNoteCancel.addEventListener("click", ev => updateNoteFailure(ev));
-
-	function updateNoteSuccess(text) {
-		setNewValueNote(noteEdited, text);
-		hideModal();
-	}
-
-	function updateNoteFailure(ev) {
-		hideModal();
-	}
-}
-
-function updateNote(grid, note) {
-	showModal(note);
-	noteEdited = note;
+function updateNote(note) {
+	showModal(note)
+		.then((value) => {
+			setNewValueNote(note, value);
+			hideModal();
+		})
+		.catch(() => {
+			hideModal();
+		})
 
 	function showModal(note) {
 		getDivModal().classList.remove("hidden");
 		getInputUpdate().value = getOldValueNote(note);
+
+		return new Promise((resolve, reject) => {
+			getInputUpdate().onkeyup = ev => {
+				if (ev.key === "Enter") {
+					resolve(getInputUpdate().value);
+				}
+			}
+			getBtnOk().onclick = ev => resolve(getInputUpdate().value);
+			getBtnCancel().onclick = reject;
+		})
 	}
 
-	function getInputUpdate() {
-		return document.getElementById("update-note-text");
+	function hideModal() {
+		getDivModal().classList.add("hidden");
 	}
 
 	function getOldValueNote(note) {
-		return note.getElementsByTagName("p")[0].textContent;
+		return getParagraph(note).textContent;
 	}
-}
 
-function hideModal() {
-	getDivModal().classList.add("hidden");
-}
+	function setNewValueNote(note, text) {
+		return getParagraph(note).textContent = text;
+	}
 
-function getDivModal() {
-	return document.getElementById("update-note-modal");
-}
+	function getParagraph(note) { return note.getElementsByTagName("p")[0]; }
+	
+	function getDivModal()    { return getById("update-note-modal"); }
+	function getInputUpdate() { return getById("update-note-text"); }
+	function getBtnOk()       { return getById("update-note-ok"); }
+	function getBtnCancel()   { return getById("update-note-cancel"); }
 
-function setNewValueNote(note, text) {
-	return note.getElementsByTagName("p")[0].textContent = text;
+	function getById(id) { return document.getElementById(id); }
 }

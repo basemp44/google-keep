@@ -82,7 +82,7 @@ function addNoteBehaviour() {
 		let btnUpdate = getBtnUpdateNote(note);
 
 		btnRemove.addEventListener("click", e => removeNote(grid, note));
-		btnUpdate.addEventListener("click", e => updateNote(grid, note));
+		btnUpdate.addEventListener("click", e => updateNote(note));
 
 		function getBtnRemoveNote(note) {
 			return note.getElementsByClassName("note-remove-btn")[0];

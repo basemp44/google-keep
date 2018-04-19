@@ -3,5 +3,4 @@ window.onload = function () {
 	asideBehaviour();
 	addNoteBehaviour();
 	searchNoteBehaviour();
-	updateNoteBehaviour();
 }
