@@ -17,8 +17,12 @@ function addNoteBehaviour() {
 	
 	input.addEventListener("input", ev => enableOrDisableBtnAdd(input, btnAdd));
 
-	Notes.pullLocalStorage();
-	Notes.forEach(noteText => addNoteToGrid(gridNotes, noteText))
+	loadNotesFromLocalStorage(gridNotes);
+
+	function loadNotesFromLocalStorage(grid) {
+		Notes.pullLocalStorage();
+		Notes.forEach(noteText => addNoteToGrid(grid, noteText))
+	}
 
 	function enableOrDisableBtnAdd(input, btn) {
 		if (isInputClear(input))
@@ -44,13 +48,13 @@ function addNoteBehaviour() {
 		btn.disabled = true;
 	}
 
-	function addNoteToLogic(input) {
-		Notes.add(input.value);
-	}
-
 	function addNoteToGrid(grid, text) {
 		let note = createNote(grid, text);
 		grid.appendChild(note);
+	}
+
+	function addNoteToLogic(input) {
+		Notes.add(input.value);
 	}
 
 	function createNote(grid, text) {
@@ -85,7 +89,7 @@ function addNoteBehaviour() {
 		let btnUpdate = getBtnUpdateNote(note);
 
 		btnRemove.addEventListener("click", e => removeNote(grid, note));
-		btnUpdate.addEventListener("click", e => updateNote(note));
+		btnUpdate.addEventListener("click", e => updateNote(grid, note));
 
 		function getBtnRemoveNote(note) {
 			return note.getElementsByClassName("note-remove-btn")[0];

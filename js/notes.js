@@ -11,22 +11,24 @@ class NotesImpl {
 		return this.notes.forEach(fn);
 	}
 
-	add(txt, sync = true) {
-		this.notes.push(txt.trim().toLowerCase());
-		if (sync)
-			this.pushLocalStorage();
+	add(txt, index=undefined) {
+		if (index === undefined)
+			this.notes.push(txt.trim().toLowerCase());
+		else
+			this.notes.splice(index, 0, txt);
 	}
 
-	remove(index, sync = true) {
+	remove(index) {
 		this.notes.splice(index, 1);
-		if (sync)
-			this.pushLocalStorage();
 	}
 
-	removeAll(sync = true) {
-		this.notes.splice(0,this.notes.length);
-		if (sync)
-			this.pushLocalStorage();
+	update(newTxt, index) {
+		this.remove(index);
+		this.add(newTxt, index);
+	}
+
+	removeAll() {
+		this.notes.splice(0, this.notes.length);
 	}
 
 	pushLocalStorage() {
@@ -36,8 +38,8 @@ class NotesImpl {
 	pullLocalStorage() {
 		let localNotes = JSON.parse(localStorage.getItem("notes"));
 		if (localNotes) {
-			this.removeAll(false);
-			localNotes.forEach(e => this.add(e, false));
+			this.removeAll();
+			localNotes.forEach(e => this.add(e));
 		}
 	}
 

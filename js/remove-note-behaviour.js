@@ -1,11 +1,6 @@
 function removeNote(grid, note) {
 	Notes.remove(getNoteIndex(grid, note));
 	note.remove();
-
-	function getNoteIndex(grid, note) {
-		let listNotes = htmlCollectionToArray(grid);
-		return listNotes.findIndex(e => e.id == note.id);
-	}
 }
 
 function removeSelectedNotes(grid) {

@@ -1,11 +1,13 @@
-function updateNote(note) {
+function updateNote(grid, note) {
 	showModal(note)
-		.then(value => handleSuccess(note, value))
+		.then(value => handleSuccess(grid, note, value))
 		.catch(handleError)
 		.finally(hideModal)
 
-	function handleSuccess(note, value) {
-		setNewValueNote(note, value);		
+	function handleSuccess(grid, note, value) {
+		setNewValueNote(note, value);
+		let noteIndex = getNoteIndex(grid, note);
+		Notes.update(value, noteIndex);
 	}
 
 	function handleError() {
@@ -36,7 +38,7 @@ function updateNote(note) {
 	}
 
 	function setNewValueNote(note, text) {
-		return getParagraph(note).textContent = text;
+		getParagraph(note).textContent = text;
 	}
 
 	function getParagraph(note) { return note.getElementsByTagName("p")[0]; }

@@ -4,3 +4,7 @@ window.onload = function () {
 	addNoteBehaviour();
 	searchNoteBehaviour();
 }
+
+window.onbeforeunload = function () {
+	Notes.pushLocalStorage();
+}
