@@ -1,12 +1,16 @@
 function updateNote(note) {
 	showModal(note)
-		.then((value) => {
-			setNewValueNote(note, value);
-			hideModal();
-		})
-		.catch(() => {
-			hideModal();
-		})
+		.then(value => handleSuccess(note, value))
+		.catch(handleError)
+		.finally(hideModal)
+
+	function handleSuccess(note, value) {
+		setNewValueNote(note, value);		
+	}
+
+	function handleError() {
+		return;
+	}
 
 	function showModal(note) {
 		getDivModal().classList.remove("hidden");
@@ -20,7 +24,7 @@ function updateNote(note) {
 			}
 			getBtnOk().onclick = ev => resolve(getInputUpdate().value);
 			getBtnCancel().onclick = reject;
-		})
+		});
 	}
 
 	function hideModal() {
