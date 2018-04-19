@@ -7,12 +7,38 @@ class NotesImpl {
 		return this.notes.length;
 	}
 
-	add(txt) {
-		this.notes.push(txt.trim().toLowerCase());
+	forEach(fn) {
+		return this.notes.forEach(fn);
 	}
 
-	remove(index) {
+	add(txt, sync = true) {
+		this.notes.push(txt.trim().toLowerCase());
+		if (sync)
+			this.pushLocalStorage();
+	}
+
+	remove(index, sync = true) {
 		this.notes.splice(index, 1);
+		if (sync)
+			this.pushLocalStorage();
+	}
+
+	removeAll(sync = true) {
+		this.notes.splice(0,this.notes.length);
+		if (sync)
+			this.pushLocalStorage();
+	}
+
+	pushLocalStorage() {
+		localStorage.setItem("notes", JSON.stringify(this.notes));
+	}
+
+	pullLocalStorage() {
+		let localNotes = JSON.parse(localStorage.getItem("notes"));
+		if (localNotes) {
+			this.removeAll(false);
+			localNotes.forEach(e => this.add(e, false));
+		}
 	}
 
 	getIndexesFilter(innerText) {

@@ -17,6 +17,9 @@ function addNoteBehaviour() {
 	
 	input.addEventListener("input", ev => enableOrDisableBtnAdd(input, btnAdd));
 
+	Notes.pullLocalStorage();
+	Notes.forEach(noteText => addNoteToGrid(gridNotes, noteText))
+
 	function enableOrDisableBtnAdd(input, btn) {
 		if (isInputClear(input))
 			disableBtnAdd(btn);
@@ -26,7 +29,7 @@ function addNoteBehaviour() {
 
 	function addNote(grid, input, btn) {
 		if (!isInputClear(input)) {
-			addNoteToGrid(grid, input);
+			addNoteToGrid(grid, input.value);
 			addNoteToLogic(input)
 			clearInput(input);
 			disableBtnAdd(btn);
@@ -45,8 +48,8 @@ function addNoteBehaviour() {
 		Notes.add(input.value);
 	}
 
-	function addNoteToGrid(grid, input) {
-		let note = createNote(grid, input.value);
+	function addNoteToGrid(grid, text) {
+		let note = createNote(grid, text);
 		grid.appendChild(note);
 	}
 
